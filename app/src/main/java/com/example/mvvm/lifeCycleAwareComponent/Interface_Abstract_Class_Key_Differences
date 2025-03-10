@@ -1,0 +1,39 @@
+Both interfaces and abstract classes are tools for abstraction in object-oriented programming,
+but they have important differences in purpose, capabilities, and usage.
+🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎
+What is Abstraction?
+
+Abstraction is one of the core principles of object-oriented programming (OOP). At its essence, abstraction is:
+
+The process of hiding implementation details while showing only the functionality to the user.
+
+Think of it as focusing on what an object does rather than how it does it.
+
+Two Levels of Abstraction
+
+1. Data Abstraction
+Hiding the internal state (data) and requiring interaction through well-defined methods
+
+2. Process Abstraction
+Hiding the implementation details of methods while exposing their functionality
+🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎
+
+How Interfaces Provide Abstraction
+
+An interface creates abstraction by:
+
+Defining a Contract: Specifies what methods an implementing class must provide
+Hiding Implementation: Users of the interface don't know how methods are implemented
+Focusing on Behavior: Emphasizes what an object can do, not how it's structured
+🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎
+
+How Abstract Classes Provide Abstraction
+
+An abstract class creates abstraction by:
+
+Partial Implementation: Provides some concrete methods, leaves others abstract
+Common Functionality: Implements shared behavior while deferring specific details
+Hierarchical Structure: Defines what a type of object is, with some details left to subclasses
+
+
+

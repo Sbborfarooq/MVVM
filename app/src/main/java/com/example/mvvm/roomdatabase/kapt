@@ -1,0 +1,71 @@
+KSP aur KAPT ki Working ka Summary
+
+Setup Process
+
+Dependencies Add Karna:
+Room ki main dependency: implementation("androidx.room:room-runtime:2.5.0")
+Room ke liye KSP/KAPT dependency: ksp("androidx.room:room-compiler:2.5.0") ya kapt("androidx.room:room-compiler:2.5.0")
+
+Plugin Add Karna:
+KSP ke liye: id("com.google.devtools.ksp")
+KAPT ke liye: id("org.jetbrains.kotlin.kapt")
+
+Latest Documentation: Haan, Room ki latest documentation ab KSP ko recommend karti hai KAPT ki jagah.
+
+KSP/KAPT Kya Hai
+
+Aapne bilkul sahi samjha hai:
+
+Annotation Processing: Jab hum code mein annotations (@Entity, @Dao, etc.) use karte hain, tab KSP/KAPT in annotations ko detect karta hai.
+
+Code Generation: Ye annotations ke based par automatically code generate karta hai, jaise:
+Database tables
+SQL queries ke implementation
+DAO methods ke implementation
+Type converters
+
+Compile-Time Checking: Haan, bilkul sahi! Iska sabse bara faida yeh hai ke galtiyan compile-time par hi mil jati hain, runtime par nahi.
+Misaal ke taur par:
+Agar SQL query mein syntax error hai
+Agar entity mein koi field missing hai
+Agar relationships sahi set nahi hain
+
+KSP vs KAPT
+
+Main differences:
+
+Processing Method:
+KAPT: Kotlin code ko pehle Java bytecode mein convert karta hai, phir Java annotation processor chalata hai
+KSP: Direct Kotlin code ko process karta hai, Java conversion ki zaroorat nahi
+
+Performance:
+KSP 2x tak faster hai kyunki Java conversion step skip hota hai
+KSP memory usage bhi kam hai
+
+Incremental Compilation:
+KSP better incremental compilation support karta hai, jisse repeated builds faster hote hain
+
+Additional Information
+
+Working Behind The Scenes:
+Jab app compile hoti hai, KSP/KAPT annotations ko scan karta hai
+Phir in annotations ke based par new source files (.kt/.java) generate karta hai
+Ye generated files original codebase ke sath compile hoti hain
+
+Debugging:
+Generated code ko dekh sakte hain:
+KSP: build/generated/ksp/
+KAPT: build/generated/source/kapt/
+
+Migration:
+KAPT se KSP mein migration simple hai, sirf plugin aur dependency declaration change karna hai
+Code mein koi changes ki zaroorat nahi hoti
+
+Limitations:
+KSP abhi bhi evolving hai, kuch edge cases mein KAPT se different behavior ho sakta hai
+Kuch purani libraries abhi bhi sirf KAPT support karti hain
+
+Aapka samajh bilkul sahi hai. KSP/KAPT basically development ko easier banate hain by automating repetitive code writing aur compile-time par
+errors catch karte hain, jisse app more robust hoti hai.
+
+

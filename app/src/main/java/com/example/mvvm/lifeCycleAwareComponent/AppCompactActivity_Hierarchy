@@ -1,0 +1,56 @@
+// The interface definition
+interface LifecycleOwner {
+    fun getLifecycle(): Lifecycle
+}
+
+// ComponentActivity implements the interface
+class ComponentActivity : /* other parent classes */, LifecycleOwner {
+    override fun getLifecycle(): Lifecycle {
+        return mLifecycleRegistry
+    }
+    // Other implementation details...
+}
+
+// FragmentActivity extends ComponentActivity
+class FragmentActivity : ComponentActivity() {
+    // Adds fragment-related functionality
+    // Inherits LifecycleOwner implementation
+}
+
+// AppCompatActivity extends FragmentActivity
+class AppCompatActivity : FragmentActivity() {
+    // Adds backward compatibility features
+    // Inherits LifecycleOwner implementation
+}
+
+// Your activity extends AppCompatActivity
+class MainActivity : AppCompatActivity() {
+    // Your code
+    // Inherits LifecycleOwner implementation
+
+    fun someMethod() {
+        // You can use lifecycle directly because
+        // your class inherits the implementation of LifecycleOwner
+        lifecycle.addObserver(MyObserver())
+    }
+}
+
+
+What This Means
+
+When you extend AppCompatActivity:
+You automatically get all its functionality
+Which includes all the functionality of its parent classes
+Which includes the implementation of the LifecycleOwner interface
+
+That's why you can directly use:
+lifecycle property in your activity
+lifecycle.addObserver(...) method
+Other lifecycle-related functionality
+
+You don't need to:
+Implement LifecycleOwner yourself
+Override any lifecycle methods to make observers work
+
+This is the power of inheritance in object-oriented programming - you get all the functionality of parent classes automatically,
+including their interface implementations.

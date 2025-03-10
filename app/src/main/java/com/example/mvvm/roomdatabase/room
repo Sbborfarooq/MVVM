@@ -1,0 +1,42 @@
+Whole summary of room and its implementation
+🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎
+
+Data Class & Table Creation:
+Data class ko use karke aik table create kiya
+@Entity annotation se table define kiya
+tableName parameter se table ka naam "contact" set kiya
+Class ke parameters columns ban gaye
+@ColumnInfo annotation se columns ko custom names bhi de sakte hain
+
+Room Database Storage:
+Room database internal phone storage mein store hoti hai
+App ke saath extend aur delete hoti hai
+Technically SQLite database use hoti hai
+Room SQLite ki complexities se bachne ke liye abstraction layer provide karta hai
+
+DAO (Data Access Object):
+DAO ek interface class hai
+CRUD (Create, Read, Update, Delete) methods define hote hain
+Directly database tables par operations perform karta hai
+Coroutines ke saath use karke background threads par operations perform kiye jate hain
+
+Coroutines Integration:
+suspend keyword se methods coroutine context mein run hote hain
+Database operations main thread ko block nahi karte
+Background threads par database operations perform hote hain
+🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎
+CONTACTDATABASE::::
+Main Database Class: Ye class actual database ko represent karti hai
+Is mein define hota hai ke database mein kitne tables hain
+Multiple tables ho sakte hain (3-4 ya jitne bhi chahiye)
+
+DAO Objects: Database class har table ke liye separate DAO object provide karti hai
+Har table ke saath interact karne ke liye alag DAO milta hai
+DAO ke through hi tables ke saath operations perform kiye jate hain
+
+
+Room Benefits:
+SQL queries directly likhne ki zarurat nahi
+Type safety provide karta hai (compile-time error checking)
+Boilerplate code se bachata hai
+LiveData integration provide karta hai

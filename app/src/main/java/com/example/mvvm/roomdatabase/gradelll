@@ -1,0 +1,13 @@
+kotline complier version ko change karna se dependencies update karna zaruri nahi hai.
+Dependencies ko 3 categories mein divide kiya ja sakta hai:
+
+Kotlin-Dependent Dependencies: Ye directly Kotlin version par depend karti hain
+KSP (Kotlin Symbol Processing)
+Kotlin Coroutines
+Kotlin Serialization
+Kotlin Reflect
+
+Android Gradle Plugin (AGP) Compatibility: AGP version ko Kotlin version ke sath compatible hona chahiye
+AGP 8.7.3 latest Kotlin versions ke sath compatible hai
+
+Other Dependencies: Android libraries (CoreKtx, Appcompat, etc.) Kotlin version se directly affected nahi hoti

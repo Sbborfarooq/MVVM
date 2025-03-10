@@ -1,0 +1,29 @@
+dataBinding is a support library that allow us to bind UI components in our layout to data sources in our apps using a declerative format
+rather than programmatically
+
+In summary, if you only need a simple way to access views in your layout, View Binding is the way to go.
+If you need to bind UI components to data sources and want to take advantage of features like automatic updates and two-way data binding,
+then Data Binding is the better choice. Depending on your application's requirements, you can choose one or even use both in conjunction.
+
+
+Data Binding: Uses DataBindingUtil.setContentView() to set the content view and automatically handles binding expressions defined in the XML layout.
+View Binding: Uses the generated binding class to inflate the layout and set the content view using the root property of the binding object.
+
+What Does setContentView(binding.root) Do?
+Understanding setContentView():
+
+In Android, every activity has a user interface (UI) that is defined in XML layout files. The method setContentView() is used to tell the activity
+which layout to display on the screen.
+For example, if you have a layout file named activity_main.xml, you would typically call setContentView(R.layout.activity_main) to set that layout
+as the UI for the activity.
+What is binding.root?:
+
+When you use View Binding, the binding object is created when you inflate the layout. This object contains references to all the views in that layout.
+The binding object has a property called root, which refers to the top-level (or root) view of the layout. This is usually the outermost layout
+element in your XML file (like a ConstraintLayout, LinearLayout, etc.).
+
+Putting It All Together:
+
+When you call setContentView(binding.root), you are telling the activity to display the entire layout that you just inflated using View Binding.
+By using binding.root, you are passing the root view of your layout to setContentView(), which means the whole layout (and all its child views)
+will be shown on the screen.
