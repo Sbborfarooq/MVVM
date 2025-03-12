@@ -22,8 +22,13 @@ class MainActivity6 : AppCompatActivity() {
         dataBase=ContactDataBase.getDataBase(this   )
 
         GlobalScope.launch {
-            dataBase.contactDao().insertContact(Contact(0, "sabbor", "030303030"))
+
+            dataBase.contactDao().insertContact(Contact(0, "sabbor", "030303030", 1 ))
         }
+//        GlobalScope.launch {
+//            dataBase.contactDao().deleteAllContacts()
+//
+//        }
     }
 
     fun getData(view: View) {dataBase.contactDao().getContact().observe(

@@ -21,4 +21,11 @@ interface ContactDAO {
 
     @Query("Select * From contact ")
     fun getContact():LiveData<List<Contact>>
+
+    @Query("DELETE FROM contact")
+    suspend fun deleteAllContacts()
+
+
+
+
 }
