@@ -1,0 +1,35 @@
+Multiple Singleton Objects vs. One Companion Object:
+Multiple Singleton Objects: Aap ek Kotlin class ke andar multiple singleton objects define kar sakte hain.
+Ye singleton objects usually object declarations ke through banaye jate hain aur har ek object declaration
+apna alag instance maintain karta hai.
+One Companion Object: Dusri taraf, ek Kotlin class ke andar sirf ek companion object allowed hai.
+Ye class ke static members jaise properties aur functions ka ek convenient tareeqa provide karta hai.
+Companion object, essentially, class ka hi ek static component hai aur ye singleton pattern ko internally
+follow karta hai.
+
+Static Access:
+Companion Object Functions: Companion object ke functions aur properties ko class ka name use kar ke
+directly access kiya ja sakta hai, bina kisi instance ke. Ye Java ke static methods ke equivalents hain
+Kotlin mein. Is se class-level functionality ko manage karna easy ho jata hai, especially jab aapko
+instance-independent methods ya properties ki zaroorat ho.
+
+
+
+
+Object:
+General Meaning: "Object" ka istemal programming mein aik generic term ke tor par hota hai jo kisi bhi data
+structure ya entity ko refer kar sakta hai jo memory mein exist karta hai.
+Kotlin specific: Kotlin main, when we say “object”, it can specifically mean a singleton instance created
+using the object keyword. Ye ek special type of declaration hai jo ke ensures karega ke class ka sirf ek hi
+ instance exist kare. Ye bahut useful hai jahan par aapko ek class ki sirf ek hi instance ki zaroorat hoti
+ hai, jaise ki managers ya helper classes.
+
+
+Specific Meaning: Jab hum "instance" term ka use karte hain, to hum kisi class ka particular realization ko
+refer karte hain. Yani ke, jab aap kisi class ki base par new object create karte hain (using new keyword
+in languages like Java, or just invoking the constructor in Kotlin and many other languages), to aap ek
+instance bana rahe hote hain us class ka.
+
+Class-based context: Har baar jab aap class ka constructor call karte hain, aap ek naya "instance" banate
+ hain us class ka. Har instance us class ke properties aur methods ko hold karta hai lekin independent state
+ maintain karta hai other instances se.
