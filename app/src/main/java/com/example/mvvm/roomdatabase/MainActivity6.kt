@@ -18,10 +18,9 @@ class MainActivity6 : AppCompatActivity() {
         binding = ActivityMain6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //this only for testing purpose to insert data into our database best practice is to use Singlton object
-        dataBase =
-            Room.databaseBuilder(applicationContext, ContactDataBase::class.java, "contactDB")
-                .build()
+
+        dataBase=ContactDataBase.getDataBase(this   )
+
         GlobalScope.launch {
             dataBase.contactDao().insertContact(Contact(0, "sabbor", "030303030"))
         }
