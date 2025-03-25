@@ -1,0 +1,15 @@
+Jetpack Compose
+Modern way to create Android UI without XML layout files
+Everything (both UI and logic) is written in Kotlin
+A single Kotlin file can contain both UI structure and behavior
+Specifically focused on the UI toolkit aspect of app development
+
+
+
+Jetpack Components
+A collection of libraries (ViewModel, Room, Navigation, etc.)
+Designed to solve various Android development challenges
+Compatible with both approaches:
+Traditional XML layouts with Views
+Modern Compose UI
+Helps maintain consistency whether you use XML or Compose
